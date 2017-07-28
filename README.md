@@ -62,10 +62,10 @@ FOR ANDROID:
 	<uses-sdk android:targetSdkVersion="23"/>
 	
 	<!--
-        Required if you want to play a custom notification sound on File.DocumentsDirectory
-        If you are doing this, make sure you have asked for the permission from users using
-        our permissionCheck ANE. http://bit.ly/2u4q6Vv
-    -->
+		Required if you want to play a custom notification sound on File.DocumentsDirectory
+		If you are doing this, make sure you have asked for the permission from users using
+		our permissionCheck ANE. http://bit.ly/2u4q6Vv
+	-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	
 	<application android:hardwareAccelerated="true" android:allowBackup="true">
@@ -80,8 +80,8 @@ FOR ANDROID:
 				<category android:name="android.intent.category.BROWSABLE" />
 				<category android:name="android.intent.category.DEFAULT" />
 					
-					<!-- Change the scheme value to your own app package name -->
-					<data android:scheme="air.com.site.app" />
+				<!-- Change the scheme value to your own app package name -->
+				<data android:scheme="air.com.site.app" />
 			</intent-filter>
 		</activity>
 		
@@ -119,13 +119,11 @@ FOR iOS:
 Embedding the ANE:
 -->
   <extensions>
-	
 	<extensionID>com.myflashlab.air.extensions.localNotification</extensionID>
 	
 	<!-- Download dependency ANEs from https://github.com/myflashlab/common-dependencies-ANE -->
 	<extensionID>com.myflashlab.air.extensions.dependency.overrideAir</extensionID>
-    <extensionID>com.myflashlab.air.extensions.dependency.androidSupport</extensionID>
-	
+	<extensionID>com.myflashlab.air.extensions.dependency.androidSupport</extensionID>
   </extensions>
 -->
 ```
@@ -134,7 +132,7 @@ Embedding the ANE:
 * This ANE is dependent on **androidSupport.ane** and **overrideAir.ane**. Download them from [here](https://github.com/myflashlab/common-dependencies-ANE).
 * Android API 15 or higher
 * iOS SDK 8.0 or higher
-* * AIR SDK 25.0
+* AIR SDK 25.0
 
 # Permissions
 If you are targeting AIR 24 or higher, you need to [take care of the permissions manually](http://www.myflashlabs.com/adobe-air-app-permissions-android-ios/). Below are the list of Permissions this ANE might require. (Note: *Necessary Permissions* are those that the ANE will NOT work without them and *Optional Permissions* are those which are needed only if you are using some specific features in the ANE.)
