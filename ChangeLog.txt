@@ -1,0 +1,4 @@
+Local Notification Air Native Extension
+
+*Jul 28, 2017 - V1.0.0*
+* beginning of the journey!
