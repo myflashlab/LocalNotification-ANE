@@ -1,4 +1,7 @@
 Local Notification Air Native Extension
 
+*Dec 15, 2017 - V1.0.1*
+* Optimized for [ANE-LAB software](https://github.com/myflashlab/ANE-LAB).
+
 *Jul 28, 2017 - V1.0.0*
 * beginning of the journey!
