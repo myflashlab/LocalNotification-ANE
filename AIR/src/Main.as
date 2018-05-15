@@ -219,9 +219,9 @@ public class Main extends Sprite
 				If you have set targetSdkVersion to 26 or higher, you must pass the notification channel ID also
 				Before passing the channel id string, you must have first created one or more NotificationChannel
 				
-				
+				setting.channelId = "myChannelId";
 			 */
-			setting.channelId = "myChannelId";
+			
 			
 			_alarmId = Notification.adjust(setting);
 		}
