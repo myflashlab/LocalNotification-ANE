@@ -1,4 +1,4 @@
-# Local Notification ANE V1.0.1 for Android+iOS
+# Local Notification ANE V2.0.0 for Android+iOS
 This AIR Native Extension will let you schedule and send local notifications even if your app is closed completely. It's supported on both Android and iOS with an identical API on the ActionScript side.
 
 **Main Features:**
@@ -8,6 +8,7 @@ This AIR Native Extension will let you schedule and send local notifications eve
 * If your app is in foreground, notifications will be dispatched to your app instead of the status bar. This gives you highly flexibility in your app.
 * Every notification can have a payload data attached to it so when it is fired, you can do your app logic based on the payload String.
 * The ANE has helpful methods to let you unset/override/dismiss schedules and already dispatched notifications from the status bar.
+* For Android targetSdkVersion 26+ it supports [NotificationChannels](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/Notification.html#registerChannel()).
 
 # asdoc
 [find the latest asdoc for this ANE here.](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/package-detail.html)
@@ -131,7 +132,7 @@ Embedding the ANE:
 * This ANE is dependent on **androidSupport.ane** and **overrideAir.ane**. Download them from [here](https://github.com/myflashlab/common-dependencies-ANE).
 * Android API 15 or higher
 * iOS SDK 8.0 or higher
-* AIR SDK 25.0
+* AIR SDK 29.0
 
 # Permissions
 If you are targeting AIR 24 or higher, you need to [take care of the permissions manually](http://www.myflashlabs.com/adobe-air-app-permissions-android-ios/). Below are the list of Permissions this ANE might require. (Note: *Necessary Permissions* are those that the ANE will NOT work without them and *Optional Permissions* are those which are needed only if you are using some specific features in the ANE.)
@@ -145,14 +146,18 @@ none
 WRITE_EXTERNAL_STORAGE
 
 # Commercial Version
-http://www.myflashlabs.com/product/local-notification-ane-adobe-air-native-extension/
+https://www.myflashlabs.com/product/local-notification-ane-adobe-air-native-extension/
 
-![local-notification ANE](http://www.myflashlabs.com/wp-content/uploads/2017/07/product_adobe-air-ane-local-notification-595x738.jpg)
+![local-notification ANE](https://www.myflashlabs.com/wp-content/uploads/2017/07/product_adobe-air-ane-local-notification-595x738.jpg)
 
 # Tutorials
 [How to embed ANEs into **FlashBuilder**, **FlashCC** and **FlashDevelop**](https://www.youtube.com/watch?v=Oubsb_3F3ec&list=PL_mmSjScdnxnSDTMYb1iDX4LemhIJrt1O)  
 
 # Changelog
+*May 15, 2018 - V2.0.0*
+* Added support for [NotificationChannel](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/Notification.html#registerChannel()) Android targetSdkVersion 26+ (Android 8+). 
+* If you are not setting ```<uses-sdk android:targetSdkVersion="23"/>``` to 26 or higher, you don't need to change anything. but if you do, you must add channels also.
+
 *Dec 15, 2017 - V1.0.1*
 * Optimized for [ANE-LAB software](https://github.com/myflashlab/ANE-LAB).
 

@@ -1,5 +1,9 @@
 Local Notification Air Native Extension
 
+*May 15, 2018 - V2.0.0*
+* Added support for [NotificationChannel](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/Notification.html#registerChannel()) Android targetSdkVersion 26+ (Android 8+). 
+* If you are not setting ```<uses-sdk android:targetSdkVersion="23"/>``` to 26 or higher, you don't need to change anything. but if you do, you must add channels also.
+
 *Dec 15, 2017 - V1.0.1*
 * Optimized for [ANE-LAB software](https://github.com/myflashlab/ANE-LAB).
 
