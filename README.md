@@ -8,7 +8,7 @@ This AIR Native Extension will let you schedule and send local notifications eve
 * If your app is in foreground, notifications will be dispatched to your app instead of the status bar. This gives you highly flexibility in your app.
 * Every notification can have a payload data attached to it so when it is fired, you can do your app logic based on the payload String.
 * The ANE has helpful methods to let you unset/override/dismiss schedules and already dispatched notifications from the status bar.
-* For Android targetSdkVersion 26+ it supports [NotificationChannels](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/Notification.html#registerChannel()).
+* For Android 8+ it supports [NotificationChannels](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/Notification.html#registerChannel()).
 
 # asdoc
 [find the latest asdoc for this ANE here.](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/package-detail.html)
@@ -156,7 +156,6 @@ https://www.myflashlabs.com/product/local-notification-ane-adobe-air-native-exte
 # Changelog
 *May 15, 2018 - V2.0.0*
 * Added support for [NotificationChannel](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/Notification.html#registerChannel()) Android targetSdkVersion 26+ (Android 8+). 
-* If you are not setting ```<uses-sdk android:targetSdkVersion="23"/>``` to 26 or higher, you don't need to change anything. but if you do, you must add channels also.
 
 *Dec 15, 2017 - V1.0.1*
 * Optimized for [ANE-LAB software](https://github.com/myflashlab/ANE-LAB).

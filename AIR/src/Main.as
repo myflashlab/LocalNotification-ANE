@@ -163,14 +163,9 @@ public class Main extends Sprite
 		Notification.init();
 		Notification.listener.addEventListener(NotificationEvents.NOTIFICATION_INVOKED, onNotifiInvoked);
 		
-		/*
-			On Android, if you have set targetSdkVersion to 26 or higher in your manifest .xml file, notifications
-			won't work unless they have a channel. To do that, simply create one or more channels like below and
-			whenever you want to construct a new notification, pass the channel id to the NotificationAndroidSettings
-			instance.
-			
-			NOTICE: Create channels AFTER you have initialized the ANE
-			
+		// channels are required on Android only
+		if(Notification.OS == Notification.ANDROID)
+		{
 			// create a new channel with a unique id
 			var channel:NotificationChannel = new NotificationChannel("myChannelId", "channel name");
 			
@@ -178,8 +173,8 @@ public class Main extends Sprite
 			channel.description = "channel description";
 			
 			// finally register the channel.
-			if(Notification.OS == Notification.ANDROID) Notification.registerChannel(channel);
-		 */
+			Notification.registerChannel(channel);
+		}
 		
 		//----------------------------------------------------------------------
 		var btn1:MySprite = createBtn("set Android Notification");
@@ -214,14 +209,7 @@ public class Main extends Sprite
 			//setting.sound = disSoundFile.nativePath; // to play a sound from File.documentsDirectory
 			//setting.sound = "androidSound"; // to play a sound from res/raw folder. There's a bug in AIR and this will not work
 			setting.vibrate = true;
-			
-			/*
-				If you have set targetSdkVersion to 26 or higher, you must pass the notification channel ID also
-				Before passing the channel id string, you must have first created one or more NotificationChannel
-				
-				setting.channelId = "myChannelId";
-			 */
-			
+			setting.channelId = "myChannelId"; // make sure the channel is already created
 			
 			_alarmId = Notification.adjust(setting);
 		}
