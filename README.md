@@ -24,6 +24,19 @@ import com.myflashlab.air.extensions.localNotifi.*;
 // this is the first thing you should do to initialize the notification ANE
 Notification.init();
 
+// channels are required on Android only
+if(Notification.OS == Notification.ANDROID)
+{
+	// create a new channel with a unique id
+	var channel:NotificationChannel = new NotificationChannel("myChannelId", "channel name");
+	
+	// set the channel properties
+	channel.description = "channel description";
+	
+	// finally register the channel.
+	Notification.registerChannel(channel);
+}
+
 // Start listening to this event as soon as possible. If your app opens because of the notification has been
 // touched from the status bar, this listener will be called to let you know about it.
 Notification.listener.addEventListener(NotificationEvents.NOTIFICATION_INVOKED, onNotifiInvoked);
@@ -36,6 +49,11 @@ setting.title = "the title";
 setting.message = "the message";
 setting.time = new Date().getTime() + 5000; // means 5 seconds from now
 setting.sound = "iosSound.caf"; // the sound file which must be packaged in your .ipa file
+
+/*
+	On Android, you must use NotificationAndroidSettings and set the channelId property
+	setting.channelId = "myChannelId"; // make sure the channel is already created
+*/
 
 // when adjusting a notification, its alarm id is returned. Use this id to unset a schedule before it happens.
 var alarmId:int = Notification.adjust(setting);
