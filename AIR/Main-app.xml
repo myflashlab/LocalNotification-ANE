@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<application xmlns="http://ns.adobe.com/air/application/29.0">
+<application xmlns="http://ns.adobe.com/air/application/30.0">
   <id>com.doitflash.localNotification</id>
-  <versionNumber>2.0.0</versionNumber>
+  <versionNumber>2.0.1</versionNumber>
   <supportedProfiles>mobileDevice</supportedProfiles>
   <filename>exLocalNotifi</filename>
   <name>Local Notification</name>
@@ -21,9 +21,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-	
-	<!--The new Permission thing on Android works ONLY if you are targetting Android SDK 23 or higher-->
-	<uses-sdk android:targetSdkVersion="23"/>
+	<uses-sdk android:targetSdkVersion="26"/>
 	
 	<application>
 		
@@ -53,9 +51,7 @@
   </android>
 	
   <iPhone>
-    <!--https://developer.apple.com/library/ios/documentation/general/reference/infoplistkeyreference/Articles/iPhoneOSKeys.html-->
-    <!--http://help.adobe.com/en_US/air/build/WSfffb011ac560372f7e64a7f12cd2dd1867-8000.html-->
-	  
+
 	 <InfoAdditions><![CDATA[
 	
 		<!--iOS 8.0 or higher can support this ANE-->
@@ -129,9 +125,10 @@
 	
 	<extensionID>com.myflashlab.air.extensions.localNotification</extensionID>
 	
-	<!-- Download dependency ANEs from https://github.com/myflashlab/common-dependencies-ANE -->
+	<!-- dependency ANEs https://github.com/myflashlab/common-dependencies-ANE -->
 	<extensionID>com.myflashlab.air.extensions.dependency.overrideAir</extensionID>
-    <extensionID>com.myflashlab.air.extensions.dependency.androidSupport</extensionID>
-	
+	<extensionID>com.myflashlab.air.extensions.dependency.androidSupport.core</extensionID>
+	<extensionID>com.myflashlab.air.extensions.dependency.androidSupport.v4</extensionID>
+
   </extensions>
 </application>

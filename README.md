@@ -1,4 +1,4 @@
-# Local Notification ANE V2.0.0 for Android+iOS
+# Local Notification ANE V2.0.1 for Android+iOS
 This AIR Native Extension will let you schedule and send local notifications even if your app is closed completely. It's supported on both Android and iOS with an identical API on the ActionScript side.
 
 **Main Features:**
@@ -77,7 +77,7 @@ FOR ANDROID:
 	<uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 	<uses-permission android:name="android.permission.VIBRATE" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-	<uses-sdk android:targetSdkVersion="23"/>
+	<uses-sdk android:targetSdkVersion="26"/>
 	
 	<!--
 		Required if you want to play a custom notification sound on File.DocumentsDirectory
@@ -141,27 +141,23 @@ Embedding the ANE:
 	
 	<!-- Download dependency ANEs from https://github.com/myflashlab/common-dependencies-ANE -->
 	<extensionID>com.myflashlab.air.extensions.dependency.overrideAir</extensionID>
-	<extensionID>com.myflashlab.air.extensions.dependency.androidSupport</extensionID>
+	<extensionID>com.myflashlab.air.extensions.dependency.androidSupport.core</extensionID>
+	<extensionID>com.myflashlab.air.extensions.dependency.androidSupport.v4</extensionID>
   </extensions>
 -->
 ```
 
 # Requirements
-* This ANE is dependent on **androidSupport.ane** and **overrideAir.ane**. Download them from [here](https://github.com/myflashlab/common-dependencies-ANE).
-* Android API 15 or higher
-* iOS SDK 8.0 or higher
-* AIR SDK 29.0
+* Android API 15+
+* iOS SDK 8.0+
+* AIR SDK 30.0+
 
 # Permissions
-If you are targeting AIR 24 or higher, you need to [take care of the permissions manually](http://www.myflashlabs.com/adobe-air-app-permissions-android-ios/). Below are the list of Permissions this ANE might require. (Note: *Necessary Permissions* are those that the ANE will NOT work without them and *Optional Permissions* are those which are needed only if you are using some specific features in the ANE.)
+Below are the list of Permissions this ANE might require. Check out the demo project available at this repository to see how we have used the [PermissionCheck ANE](http://www.myflashlabs.com/product/native-access-permission-check-settings-menu-air-native-extension/) to ask for the permissions.
 
-Check out the demo project available at this repository to see how we have used our [PermissionCheck ANE](http://www.myflashlabs.com/product/native-access-permission-check-settings-menu-air-native-extension/) to ask for the permissions.
-
-**Necessary Permissions:**  
-none
-
-**Optional Permissions:**  
-WRITE_EXTERNAL_STORAGE
+Necessary | Optional
+--------------------------- | ---------------------------
+- | [SOURCE_STORAGE](https://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/nativePermissions/PermissionCheck.html#SOURCE_STORAGE)
 
 # Commercial Version
 https://www.myflashlabs.com/product/local-notification-ane-adobe-air-native-extension/
@@ -172,6 +168,9 @@ https://www.myflashlabs.com/product/local-notification-ane-adobe-air-native-exte
 [How to embed ANEs into **FlashBuilder**, **FlashCC** and **FlashDevelop**](https://www.youtube.com/watch?v=Oubsb_3F3ec&list=PL_mmSjScdnxnSDTMYb1iDX4LemhIJrt1O)  
 
 # Changelog
+*Sep 23, 2018 - V2.0.1*
+* Removed androidSupport dependency then added ```androidSupport-core.ane``` and ```androidSupport-v4.ane``` instead.
+
 *May 15, 2018 - V2.0.0*
 * Added support for [NotificationChannel](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/Notification.html#registerChannel()) Android targetSdkVersion 26+ (Android 8+). 
 
