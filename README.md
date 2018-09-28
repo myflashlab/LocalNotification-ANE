@@ -157,7 +157,7 @@ Below are the list of Permissions this ANE might require. Check out the demo pro
 
 Necessary | Optional
 --------------------------- | ---------------------------
-- | [SOURCE_STORAGE](https://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/nativePermissions/PermissionCheck.html#SOURCE_STORAGE)
+. | [SOURCE_STORAGE](https://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/nativePermissions/PermissionCheck.html#SOURCE_STORAGE)
 
 # Commercial Version
 https://www.myflashlabs.com/product/local-notification-ane-adobe-air-native-extension/
