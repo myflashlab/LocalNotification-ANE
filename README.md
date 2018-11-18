@@ -1,4 +1,4 @@
-# Local Notification ANE V2.0.1 for Android+iOS
+# Local Notification ANE V2.0.2 for Android+iOS
 This AIR Native Extension will let you schedule and send local notifications even if your app is closed completely. It's supported on both Android and iOS with an identical API on the ActionScript side.
 
 **Main Features:**
@@ -168,6 +168,10 @@ https://www.myflashlabs.com/product/local-notification-ane-adobe-air-native-exte
 [How to embed ANEs into **FlashBuilder**, **FlashCC** and **FlashDevelop**](https://www.youtube.com/watch?v=Oubsb_3F3ec&list=PL_mmSjScdnxnSDTMYb1iDX4LemhIJrt1O)  
 
 # Changelog
+*Nov 18, 2018 - V2.0.2*
+* Works with OverrideAir ANE V5.6.1 or higher
+* Works with ANELAB V1.1.26 or higher
+
 *Sep 23, 2018 - V2.0.1*
 * Removed androidSupport dependency then added ```androidSupport-core.ane``` and ```androidSupport-v4.ane``` instead.
 
