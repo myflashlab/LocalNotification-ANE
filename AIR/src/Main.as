@@ -150,21 +150,19 @@ public class Main extends Sprite
 		}
 	}
 	
-	private function myDebuggerDelegate($ane:String, $class:String, $msg:String):void
-	{
-		trace($ane + "(" + $class + ")" + " " + $msg);
-	}
-	
 	private function init():void
 	{
-		// remove this line in production build or pass null as the delegate
-		OverrideAir.enableDebugger(myDebuggerDelegate);
+		// Remove OverrideAir debugger in production builds
+		OverrideAir.enableDebugger(function ($ane:String, $class:String, $msg:String):void
+		{
+			trace($ane+" ("+$class+") "+$msg);
+		});
 		
 		Notification.init();
 		Notification.listener.addEventListener(NotificationEvents.NOTIFICATION_INVOKED, onNotifiInvoked);
 		
 		// channels are required on Android only
-		if(Notification.OS == Notification.ANDROID)
+		if(OverrideAir.os == OverrideAir.ANDROID)
 		{
 			// create a new channel with a unique id
 			var channel:NotificationChannel = new NotificationChannel("myChannelId", "channel name");
@@ -179,7 +177,7 @@ public class Main extends Sprite
 		//----------------------------------------------------------------------
 		var btn1:MySprite = createBtn("set Android Notification");
 		btn1.addEventListener(MouseEvent.CLICK, setAndroidNotification);
-		if(Notification.OS == Notification.ANDROID) _list.add(btn1);
+		if(OverrideAir.os == OverrideAir.ANDROID) _list.add(btn1);
 		
 		function setAndroidNotification(e:MouseEvent):void
 		{
@@ -217,7 +215,7 @@ public class Main extends Sprite
 		//---------------------------------------------------------------------
 		var btn2:MySprite = createBtn("set iOS Notification");
 		btn2.addEventListener(MouseEvent.CLICK, setiOSNotification);
-		if(Notification.OS == Notification.IOS) _list.add(btn2);
+		if(OverrideAir.os == OverrideAir.IOS) _list.add(btn2);
 		
 		function setiOSNotification(e:MouseEvent):void
 		{

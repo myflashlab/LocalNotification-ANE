@@ -1,4 +1,4 @@
-# Local Notification ANE V2.0.2 for Android+iOS
+# Local Notification ANE for Android+iOS
 This AIR Native Extension will let you schedule and send local notifications even if your app is closed completely. It's supported on both Android and iOS with an identical API on the ActionScript side.
 
 **Main Features:**
@@ -10,10 +10,7 @@ This AIR Native Extension will let you schedule and send local notifications eve
 * The ANE has helpful methods to let you unset/override/dismiss schedules and already dispatched notifications from the status bar.
 * For Android 8+ it supports [NotificationChannels](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/Notification.html#registerChannel()).
 
-# asdoc
-[find the latest asdoc for this ANE here.](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/package-detail.html)
-
-[Download demo ANE](https://github.com/myflashlab/LocalNotification-ANE/tree/master/AIR/lib)
+[find the latest **asdoc** for this ANE here.](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/package-detail.html)
 
 # AIR Usage
 For the complete AS3 code usage, see the [demo project here](https://github.com/myflashlab/LocalNotification-ANE/blob/master/AIR/src/Main.as).
@@ -167,19 +164,6 @@ https://www.myflashlabs.com/product/local-notification-ane-adobe-air-native-exte
 # Tutorials
 [How to embed ANEs into **FlashBuilder**, **FlashCC** and **FlashDevelop**](https://www.youtube.com/watch?v=Oubsb_3F3ec&list=PL_mmSjScdnxnSDTMYb1iDX4LemhIJrt1O)  
 
-# Changelog
-*Nov 18, 2018 - V2.0.2*
-* Works with OverrideAir ANE V5.6.1 or higher
-* Works with ANELAB V1.1.26 or higher
-
-*Sep 23, 2018 - V2.0.1*
-* Removed androidSupport dependency then added ```androidSupport-core.ane``` and ```androidSupport-v4.ane``` instead.
-
-*May 15, 2018 - V2.0.0*
-* Added support for [NotificationChannel](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/Notification.html#registerChannel()) Android targetSdkVersion 26+ (Android 8+). 
-
-*Dec 15, 2017 - V1.0.1*
-* Optimized for [ANE-LAB software](https://github.com/myflashlab/ANE-LAB).
-
-*Jul 28, 2017 - V1.0.0*
-* beginning of the journey!
+# Premium Support #
+[![Premium Support package](https://www.myflashlabs.com/wp-content/uploads/2016/06/professional-support.jpg)](https://www.myflashlabs.com/product/myflashlabs-support/)
+If you are an [active MyFlashLabs club member](https://www.myflashlabs.com/product/myflashlabs-club-membership/), you will have access to our private and secure support ticket system for all our ANEs. Even if you are not a member, you can still receive premium help if you purchase the [premium support package](https://www.myflashlabs.com/product/myflashlabs-support/).
