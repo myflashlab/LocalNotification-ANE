@@ -22,14 +22,25 @@ import com.myflashlab.air.extensions.localNotifi.*;
 Notification.init();
 
 // channels are required on Android only
-if(Notification.OS == Notification.ANDROID)
+if(OverrideAir.os == OverrideAir.ANDROID)
 {
 	// create a new channel with a unique id
 	var channel:NotificationChannel = new NotificationChannel("myChannelId", "channel name");
-	
-	// set the channel properties
+			
+	/*
+		you can add your own sound files into the "res/raw" using the resourceManager tool
+		available in the ANELAB software: https://github.com/myflashlab/ANE-LAB/
+	*/
+	channel.rawSound = "myflashlab_toy"; // this is myflashlab_toy.mp3 file placed inside Android "res/raw"
+	channel.showBadge = true;
+	channel.importance = NotificationChannel.NOTIFICATION_IMPORTANCE_DEFAULT;
+	channel.isLightsEnabled = true;
+	channel.isVibrationEnabled = true;
+	channel.lightColor = "#990000";
+	channel.lockscreenVisibility = NotificationChannel.VISIBILITY_PUBLIC;
+	channel.vibrationPattern = [10, 100, 100, 200, 100, 300, 100, 400, 100, 500, 100, 600, 100, 700, 100, 800];
 	channel.description = "channel description";
-	
+			
 	// finally register the channel.
 	Notification.registerChannel(channel);
 }
@@ -74,7 +85,7 @@ FOR ANDROID:
 	<uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 	<uses-permission android:name="android.permission.VIBRATE" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-	<uses-sdk android:targetSdkVersion="26"/>
+	<uses-sdk android:targetSdkVersion="28"/>
 	
 	<!--
 		Required if you want to play a custom notification sound on File.DocumentsDirectory
@@ -119,7 +130,7 @@ FOR ANDROID:
 FOR iOS:
 -->
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
+	<string>10.0</string>
 	
 	<key>UIBackgroundModes</key>
 	<array>
@@ -146,7 +157,7 @@ Embedding the ANE:
 
 # Requirements
 * Android API 15+
-* iOS SDK 8.0+
+* iOS SDK 10.0+
 * AIR SDK 30.0+
 
 # Permissions

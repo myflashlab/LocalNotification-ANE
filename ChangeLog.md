@@ -1,5 +1,10 @@
 Local Notification Air Native Extension
 
+*Aug 4, 2019 - V2.1.0*
+* Added support for Android 64-bit arch.
+* Min iOS version to support this ANE is 10+
+* Updated the [NotificationChannel](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/NotificationChannel.html) class to support complete notification configuration on devices with Android 8+.
+
 *Nov 18, 2018 - V2.0.2*
 * Works with OverrideAir ANE V5.6.1 or higher
 * Works with ANELAB V1.1.26 or higher

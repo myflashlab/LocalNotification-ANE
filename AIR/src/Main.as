@@ -32,11 +32,6 @@ import flash.ui.MultitouchInputMode;
 
 import com.myflashlab.air.extensions.localNotifi.Notification;
 
-import flash.events.StatusEvent;
-
-import flash.net.URLRequestMethod;
-import flash.net.URLVariables;
-
 
 /**
  * ...
@@ -82,7 +77,7 @@ public class Main extends Sprite
 		_txt.multiline = true;
 		_txt.wordWrap = true;
 		_txt.embedFonts = false;
-		_txt.htmlText = "<font face='Arimo' color='#333333' size='20'><b>Local Notification ANE for Adobe Air V" + Notification.VERSION + "</font>";
+		_txt.htmlText = "<font face='Arimo' color='#333333' size='20'><b>Local Notification ANE for AIR V" + Notification.VERSION + "</font>";
 		_txt.scaleX = _txt.scaleY = DeviceInfo.dpiScaleMultiplier;
 		this.addChild(_txt);
 		
@@ -161,13 +156,24 @@ public class Main extends Sprite
 		Notification.init();
 		Notification.listener.addEventListener(NotificationEvents.NOTIFICATION_INVOKED, onNotifiInvoked);
 		
-		// channels are required on Android only
+		// channels are required on Android 8+ only
 		if(OverrideAir.os == OverrideAir.ANDROID)
 		{
 			// create a new channel with a unique id
 			var channel:NotificationChannel = new NotificationChannel("myChannelId", "channel name");
 			
-			// set the channel properties
+			/*
+				you can add your own sound files into the "res/raw" using the resourceManager tool
+				available in the ANELAB software: https://github.com/myflashlab/ANE-LAB/
+			*/
+			channel.rawSound = "myflashlab_toy"; // this is myflashlab_toy.mp3 file placed inside Android "res/raw"
+			channel.showBadge = true;
+			channel.importance = NotificationChannel.NOTIFICATION_IMPORTANCE_DEFAULT;
+			channel.isLightsEnabled = true;
+			channel.isVibrationEnabled = true;
+			channel.lightColor = "#990000";
+			channel.lockscreenVisibility = NotificationChannel.VISIBILITY_PUBLIC;
+			channel.vibrationPattern = [10, 100, 100, 200, 100, 300, 100, 400, 100, 500, 100, 600, 100, 700, 100, 800];
 			channel.description = "channel description";
 			
 			// finally register the channel.
@@ -181,33 +187,15 @@ public class Main extends Sprite
 		
 		function setAndroidNotification(e:MouseEvent):void
 		{
-			/*
-				To play a custom sound, you need to copy it to File.documentsDirectory. It's worthy to mention that
-				if you want to copy any file to File.documentsDirectory, you need to have WRITE_EXTERNAL_STORAGE
-				permission from the user. To get the permission, you need to use this ANE:
-			 http://www.myflashlabs.com/product/native-access-permission-check-settings-menu-air-native-extension/
-				
-				There is a bug in AIR SDK which is explained here:
-					https://github.com/Gamua/Adobe-Runtime-Support/issues/12
-			 
-				 When this is fixed, you may be able to use the Resource Manger Tool to copy the
-				 sound files to your Android's res/raw folder.
-			*/
-			
-			/*var soundFile:File = File.applicationDirectory.resolvePath("androidSound.mp3");
-			var disSoundFile:File = File.documentsDirectory.resolvePath("androidSound.mp3");
-			soundFile.copyTo(disSoundFile, true);*/
-			
 			var setting:NotificationAndroidSettings = new NotificationAndroidSettings();
 			setting.notificationId = 3;
 			setting.payload = "payload data";
 			setting.title = "the title";
 			setting.message = "the message";
 			setting.time = new Date().getTime() + 5000; // means 5 seconds from now
-			//setting.sound = disSoundFile.nativePath; // to play a sound from File.documentsDirectory
-			//setting.sound = "androidSound"; // to play a sound from res/raw folder. There's a bug in AIR and this will not work
+			setting.sound = "myflashlab_toy"; // to play a sound from res/raw on older Android versions. works on AIR SDK 33+
 			setting.vibrate = true;
-			setting.channelId = "myChannelId"; // make sure the channel is already created
+			setting.channelId = "myChannelId"; // channels must be created on Android 8+
 			
 			_alarmId = Notification.adjust(setting);
 		}
@@ -273,6 +261,36 @@ public class Main extends Sprite
 		// When app is in foreground, notification will not be generated. however, you can check
 		// if e.isAppActive is true or not Then you can manually update your UI design.
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	private function createBtn($str:String):MySprite
