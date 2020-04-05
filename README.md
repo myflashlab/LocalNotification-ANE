@@ -8,7 +8,7 @@ This AIR Native Extension will let you schedule and send local notifications eve
 * If your app is in foreground, notifications will be dispatched to your app instead of the status bar. This gives you highly flexibility in your app.
 * Every notification can have a payload data attached to it so when it is fired, you can do your app logic based on the payload String.
 * The ANE has helpful methods to let you unset/override/dismiss schedules and already dispatched notifications from the status bar.
-* For Android 8+ it supports [NotificationChannels](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/Notification.html#registerChannel()).
+* For Android 8+ it supports [NotificationChannels](https://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/Notification.html#registerChannel()).
 
 [find the latest **asdoc** for this ANE here.](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/localNotifi/package-detail.html)
 
@@ -149,16 +149,16 @@ Embedding the ANE:
 	
 	<!-- Download dependency ANEs from https://github.com/myflashlab/common-dependencies-ANE -->
 	<extensionID>com.myflashlab.air.extensions.dependency.overrideAir</extensionID>
-	<extensionID>com.myflashlab.air.extensions.dependency.androidSupport.core</extensionID>
-	<extensionID>com.myflashlab.air.extensions.dependency.androidSupport.v4</extensionID>
+	<extensionID>com.myflashlab.air.extensions.dependency.androidx.core</extensionID>
+	<extensionID>com.myflashlab.air.extensions.dependency.androidx.lifecycle</extensionID>
   </extensions>
 -->
 ```
 
 # Requirements
-* Android API 15+
+* Android API 19+
 * iOS SDK 10.0+
-* AIR SDK 30.0+
+* AIR SDK 33.0+
 
 # Permissions
 Below are the list of Permissions this ANE might require. Check out the demo project available at this repository to see how we have used the [PermissionCheck ANE](http://www.myflashlabs.com/product/native-access-permission-check-settings-menu-air-native-extension/) to ask for the permissions.
