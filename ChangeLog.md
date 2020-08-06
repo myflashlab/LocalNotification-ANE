@@ -1,4 +1,8 @@
-Local Notification Air Native Extension
+#  Local Notification Air Native Extension
+
+*Jul 28, 2020 - v3.5.1*
+- Upgrade dependencies to the latest versions.
+- Fixed some minor issues and refactor native codes.
 
 *Apr 05, 2020 - V3.0.0*
 - Add androidx dependencies instead of android support libraries
